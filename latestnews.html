@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,6 +58,11 @@
             cursor: pointer;
         }
 
+        h1 {
+            font-size: 35px;
+            margin-top: 70px; /* Increased spacing below the green menu bar */
+        }
+
         @media only screen and (max-width: 768px) {
             .menu {
                 display: none;
@@ -88,6 +92,15 @@
                 left: 50%;
                 transform: translateX(-50%); /* Center toggle menu */
                 z-index: 1001; /* Ensure it is above the menu */
+            }
+
+            iframe {
+                width: 90%; /* Adjust video size for mobile */
+                height: auto;
+            }
+
+            h1 {
+                margin-top: 70px; /* Increased spacing for mobile devices */
             }
         }
     </style>
@@ -159,6 +172,9 @@
 </body>
 
 </html>
+
+
+
 
 
 

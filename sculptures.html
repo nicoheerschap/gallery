@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artwork from Yun Xie - Sculpture gallery">
+  <meta name="keywords" content="Yun Xie, Art, Artwork, Painting, Sculpture, Kunst, Kunstwerken, Schilderij, Beeld">
+  <meta name="author" content="Nico Heerschap">
+  <meta name="google" content="notranslate">
+  
+  <title>Yun Xie Art - Sculpture gallery</title>
+  <style>
+   
+   body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: #4CAF50;
+      font-size: 18px;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 0 15px;
+      text-align: center;
+    }
+
+    .navbar a:hover {
+      background-color: #45a049;    }
+
+h1 {
+      text-align: center;
+      font-size: 35px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 25px;
+      margin-top: 20px;
+    }    
+
+    .fotogroep {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .fotogroep figure {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fotogroep img {
+      width: 350px;
+      max-width: 100%;
+      padding: 4px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .fotogroep figcaption {
+      text-align: center;
+      padding: 5px;
+      background-color: #f8f8f8;
+    }
+
+    .zoom-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .zoom-container img {
+      max-width: 98%;
+      max-height: 90%;
+      border: 5px solid #fff;
+    }
+
+    .zoom-container .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+	
+	.footer {
+      text-align: center;
+      background-color: yellow;
+      font-size: 15px;
+      padding: 10px 0;
+	  margin: 0; 
+    }
+	
+	@media only screen and (max-width: 768px) {
+     /* For mobile phones: */
+     [class*="col-"] {
+     width: 100%;
+    }
+	
+  </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="sculptures.html"><b>Sculptures</b></a>
+        <a href="paintings.html">Paintings</a>
+        <a href="latestnews.html">News</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+<h1>Yun Xie Art</h1>
+<h2>Sculpture Gallery</h2>
+
+<div class="fotogroep">
+  <script>
+    const sculptures = [
+      { src: "sculptures/Sculpture-0.jpg", title: "Guan Yin", size: " 49cm" },
+      { src: "sculptures/Sculpture-1.jpg", title: "Lady in red dress 1", size: " 56cm" },
+      { src: "sculptures/Sculpture-2.jpg", title: "The kiss", size: " 39cm" },
+      { src: "sculptures/Sculpture-3.jpg", title: "Buddha", size: " 42cm" },
+      { src: "sculptures/Sculpture-4.jpg", title: "Lady with a red rose", size: " 49cm" },
+      { src: "sculptures/Sculpture-5.jpg", title: "Tibet man", size: " 41cm" },
+      { src: "sculptures/Sculpture-6.jpg", title: "Stuck togehter", size: " 23cm" },
+      { src: "sculptures/Sculpture-7.jpg", title: "Fish woman", size: " 33cm" },
+      { src: "sculptures/Sculpture-8.jpg", title: "Chinese lady", size: " 42cm" },
+      { src: "sculptures/Sculpture-9A.jpg", title: "Beautiful lady", size: " 55cm" },
+	  { src: "sculptures/Sculpture-9B.jpg", title: "Detail of Beautiful lady", size: " 55cm" },
+	  { src: "sculptures/Sculpture-10A.jpg", title: "Winter lady", size: " 55cm" },
+	  { src: "sculptures/Sculpture-10B.jpg", title: "Detail of Winter lady", size: " 55cm" },
+	  { src: "sculptures/Sculpture-11.jpg", title: "Lady in red dress 2", size: " 49cm" },
+	  { src: "sculptures/Sculpture-12.jpg", title: "Flute and pipa player", size: " 25/26cm" },
+	  { src: "sculptures/Sculpture-13.jpg", title: "Fat lady", size: "24cm" },
+	  { src: "sculptures/Sculpture-14.jpg", title: "Human tower", size: " 34cm" },
+	  { src: "sculptures/Sculpture-15.jpg", title: "Dating", size: " 20cm" },
+	  { src: "sculptures/Sculpture-16.jpg", title: "The poet", size: " 47cm" },
+	  { src: "sculptures/Sculpture-17.jpg", title: "The girl", size: " 33cm" },
+	  { src: "sculptures/Sculpture-18.jpg", title: "Keith Richards", size: " 30cm" },
+	  { src: "sculptures/Sculpture-19.jpg", title: "Wu Kong", size: "65cm" },
+	  { src: "sculptures/Sculpture-20.jpg", title: "Qinq man", size: " 59cm" },
+	  { src: "sculptures/Sculpture-21.jpg", title: "Lady in flower dress", size: " 54cm" },
+	  { src: "sculptures/Sculpture-22.jpg", title: "Serene lady", size: " 56cm" },
+	  { src: "sculptures/Sculpture-23.jpg", title: "Happy girl", size: " 54cm" },
+	  { src: "sculptures/Sculpture-24.jpg", title: "Qinq couple", size: " 37cm" },
+	  { src: "sculptures/Sculpture-25.jpg", title: "Quan Yin 2", size: " 55cm" },
+	  { src: "sculptures/Sculpture-26.jpg", title: "Fish lady reading", size: " 15cm" },
+	  { src: "sculptures/Sculpture-27.jpg", title: "Chique woman", size: "38cm" },
+	  { src: "sculptures/Sculpture-28.jpg", title: "Tang lady", size: " 45cm" },
+	  { src: "sculptures/Sculpture-29.jpg", title: "My lady", size: " 38cm" },
+	  { src: "sculptures/Sculpture-30.jpg", title: "Woman with roses", size: " 57cm" },
+	  { src: "sculptures/Sculpture-31.jpg", title: "Pink dress", size: " 36cm" },
+	  { src: "sculptures/Sculpture-32.jpg", title: "Quan Yin 2", size: " 59cm" },
+	  { src: "sculptures/Sculpture-33.jpg", title: "My husband", size: " 18cm" }
+	  
+	];
+
+    sculptures.forEach(sculpture => {
+      document.write(`
+        <figure>
+          <img src="${sculpture.src}" alt="${sculpture.title}" onclick="openZoom('${sculpture.src}')">
+          <figcaption><b>${sculpture.title}</b>, ceramic sculpture, ${sculpture.size}</figcaption>
+        </figure>
+      `);
+    });
+  </script>
+</div>
+
+<div class="zoom-container" id="zoomContainer">
+  <span class="close" onclick="closeZoom()">&times;</span>
+  <img id="zoomImage" src="" alt="Zoomed image">
+</div>
+
+ <div class="footer">
+   <p>&copy; 2025 Yun Xie Art | All rights reserved</p>
+ </div>
+
+<script>
+  function openZoom(imageSrc) {
+    document.getElementById('zoomImage').src = imageSrc;
+    document.getElementById('zoomContainer').style.display = 'flex';
+  }
+
+  function closeZoom() {
+    document.getElementById('zoomContainer').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+

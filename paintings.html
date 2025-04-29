@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <!-- Google tag (gtag.js) --> 
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DH00KLGT6T"></script> 
+     <script> 
+       window.dataLayer = window.dataLayer || []; 
+       function gtag(){dataLayer.push(arguments);} 
+       gtag('js', new Date()); 
+       gtag('config', 'G-DH00KLGT6T'); 
+     </script>
+
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artwork from Yun Xie - Painting gallery">
+  <meta name="keywords" content="Yun Xie, Art, Artwork, Painting, Sculpture, Kunst, Kunstwerken, Schilderij, Beeld">
+  <meta name="author" content="Nico Heerschap">
+  <meta name="google" content="notranslate">
+  
+  <title>Yun Xie Art - Painting gallery</title>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: #4CAF50;
+      font-size: 18px;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 0 15px;
+      text-align: center;
+    }
+
+    .navbar a:hover {
+      background-color: #45a049;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 35px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 25px;
+      margin-top: 20px;
+    }
+
+    .fotogroep {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .fotogroep figure {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .fotogroep img {
+      width: 350px;
+      max-width: 100%;
+      padding: 4px;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .fotogroep figcaption {
+      text-align: center;
+      padding: 10px;
+      background-color: #f8f8f8;
+    }
+
+    .zoom-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .zoom-container img {
+      max-width: 98%;
+      max-height: 90%;
+      border: 5px solid #fff;
+    }
+
+    .zoom-container .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .footer {
+      text-align: center;
+      background-color: yellow;
+      font-size: 15px;
+      padding: 10px 0;
+      margin: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+      [class*="col-"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="sculptures.html">Sculptures</a>
+  <a href="paintings.html"><b>Paintings</b></a>
+  <a href="latestnews.html">News</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<h1>Yun Xie Art</h1>
+<h2>Painting Gallery</h2>
+
+<div class="fotogroep">
+  <script>
+    const paintings = [
+      { src: "paintings/Painting-0.jpg", title: "Quan Yin 1", material: "arcrylic on canvas", size: " 40x120cm" },
+      { src: "paintings/Painting-0A.jpg", title: "Detail of Quan Yin 1", material: "acrylic on canvas", size: " 40x120cm" },
+	  { src: "paintings/Painting-1.jpg", title: "Lady in blue", material: "arcrylic on canvas", size: " 60x80cm" },
+	  { src: "paintings/Painting-2.jpg", title: "Quan Yin 2", material: "acrylic on canvas", size: " 60x80cm" },
+	  { src: "paintings/Painting-2A.jpg", title: "Pusa 1", material: "arcrylic on canvas", size: " 40x50cm" },
+	  { src: "paintings/Painting-2B.jpg", title: "Pusa 2", material: "acrylic on canvas", size: " 40x50cm" },
+	  { src: "paintings/Painting-3.jpg", title: "Terracotta warrior", material: "acrylic on canvas", size: " 30x40cm" },
+	  { src: "paintings/Painting-4.jpg", title: "Flower lady", material: "acrylic on canvas", size: " 50x50cm" },
+	  { src: "paintings/Painting-5.jpg", title: "Quan Yin 3", material: "acrylic on canvas", size: " 50x60cm" },
+	  { src: "paintings/Painting-6.jpg", title: "Quan Yin 4", material: "acrylic on canvas", size: " 50x50cm" },
+	  { src: "paintings/Painting-7.jpg", title: "Keith Richards", material: "acrylic on canvas", size: " 30x40cm" },
+	  { src: "paintings/Painting-8.jpg", title: "Happy music 1", material: "acrylic on canvas", size: " 53x43cm" },
+	  { src: "paintings/Painting-9.jpg", title: "Lady in red dress", material: "acrylic on canvas", size: " 38x46cm" },
+	  { src: "paintings/Painting-10.jpg", title: "Quan Yin 5", material: "acrylic on canvas", size: " 60x70cm" },
+	  { src: "paintings/Painting-11.jpg", title: "Tang lady", material: "acrylic on paper", size: " 37x26cm" },
+	  { src: "paintings/Painting-12.jpg", title: "Happy music 2", material: "acrylic on canvas", size: " 60x80cm" },
+	  { src: "paintings/Painting-13.jpg", title: "Fight Covid", material: "acrylic on canvas", size: " 2 part 29x29cm" },
+	  { src: "paintings/Painting-14.jpg", title: "In harmony with nature", material: "acrylic on canvas", size: " 60x80" },
+	  { src: "paintings/Painting-15.jpg", title: "Chinese officer", material: "acrylic on canvas", size: " 60x70cm" },
+	  { src: "paintings/Painting-16.jpg", title: "Portrait of woman", material: "acrylic on canvas", size: " 24x24cm" },
+	  { src: "paintings/Painting-17.jpg", title: "Girl in front of painting", material: "acrylic on canvas", size: " 30x40cm" },
+	  { src: "paintings/Painting-18.jpg", title: "Tang lady 2", material: "acrylic on canvas", size: " 30x25cm" },
+	  { src: "paintings/Painting-19.jpg", title: "Go to bed", material: "oil painting", size: " 30x40cm" }
+	  
+	 	  
+    ];
+
+    paintings.forEach(painting => {
+      document.write(`
+        <figure>
+          <img src="${painting.src}" alt="${painting.title}" onclick="openZoom('${painting.src}')">
+          <figcaption><b>${painting.title}</b>, ${painting.material},${painting.size}
+          </figcaption>
+        </figure>
+      `);
+    });
+  </script>
+</div>
+
+<div class="zoom-container" id="zoomContainer">
+  <span class="close" onclick="closeZoom()">&times;</span>
+  <img id="zoomImage" src="" alt="Zoomed image">
+</div>
+
+<div class="footer">
+  <p>&copy; 2025 Yun Xie Art | All rights reserved</p>
+</div>
+
+<script>
+  function openZoom(imageSrc) {
+    document.getElementById('zoomImage').src = imageSrc;
+    document.getElementById('zoomContainer').style.display = 'flex';
+  }
+
+  function closeZoom() {
+    document.getElementById('zoomContainer').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

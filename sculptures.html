@@ -190,7 +190,7 @@
     <div class="fotogroep">
         <script>
             const sculptures = [
-                { src: "sculptures/Sculpture-min-01.jpg", title: "Guan Yin 3", material: "Ceramic+Raku", size: "43cm" },
+                { src: "sculptures/Sculpture-min-01.jpg", title: "Guan Yin 3", material: "Ceramic sculpture+Raku", size: "43cm" },
                <!-- { src: "sculptures/Sculpture-min-02.jpg", title: "Si Wei Pusa 1", size: "32cm" }, -->
                 <!-- { src: "sculptures/Sculpture-min-03.jpg", title: "Si Wei Pusa 2", size: "23cm" },-->
                <!--  { src: "sculptures/Sculpture-0.jpg", title: "Guan Yin 1", size: "49cm" },-->
@@ -221,7 +221,7 @@
               <!--   { src: "sculptures/Sculpture-26.jpg", title: "Tang lady", size: "43cm" },-->
               <!--   { src: "sculptures/Sculpture-27.jpg", title: "Woman in coloured dress", size: "35cm" },-->
               <!--   { src: "sculptures/Sculpture-28.jpg", title: "Husband", size: "18cm" },-->
-                { src: "sculptures/Sculpture-29.jpg", title: "Waiting for my date", material: "Ceramic", size: "33cm" }
+                { src: "sculptures/Sculpture-29.jpg", title: "Waiting for my date", material: "Ceramic sculpture", size: "33cm" }
 
                 
                 // Add more sculptures here.
@@ -231,7 +231,7 @@
                 document.write(`
                     <figure>
                         <img src="${sculpture.src}" alt="${sculpture.title}" onclick="openZoom('${sculpture.src}')">
-                        <figcaption><b>${sculpture.title}</b><br>Ceramic sculpture, ${sculpture.material}, Height: ${sculpture.size}</figcaption>
+                        <figcaption><b>${sculpture.title}</b><br> ${sculpture.material}, Height: ${sculpture.size}</figcaption>
                     </figure>
                 `);
             });
